@@ -33,24 +33,23 @@ function AxiosUsers() {
     return <p className="status error">{error}</p>
   }
 
-  return (
-    <section className="cards-grid">
-      {users.map((user) => (
-        <article key={user.id} className="user-card">
-          <h2>{user.name}</h2>
-          <p>
-            <span>Email:</span> {user.email}
-          </p>
-          <p>
-            <span>Phone:</span> {user.phone}
-          </p>
-          <p>
-            <span>Website:</span> {user.website}
-          </p>
-        </article>
-      ))}
-    </section>
-  )
+ return (
+  <div className="user-list">
+    {users.map((user) => (
+      <div key={user.id} className="user-row">
+        <div className="user-name">
+          👤 <strong>{user.name}</strong>
+        </div>
+
+        <div className="user-info">
+          <p><span>Email:</span> {user.email}</p>
+          <p><span>Phone:</span> {user.phone}</p>
+          <p><span>Website:</span> {user.website}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+)
 }
 
 export default AxiosUsers
